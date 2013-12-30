@@ -11,8 +11,9 @@ val sheet = workbook.getSheet(0)
 // find header cell
 sheet.find(_.text == "Name").map { header =>
   // scan specified column
-  sheet.column(header.colNum).foreach { cell =>
-    println(cell.text)
-  }
+  sheet.column(header.colNum)
+    .filter(_.rowNum > header.rowNum).foreach { cell =>
+      println(cell.text)
+    }
 }
 ```
