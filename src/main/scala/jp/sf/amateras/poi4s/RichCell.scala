@@ -10,6 +10,28 @@ class RichCell(cell: Cell){
 
   lazy val colNum: Int = cell.getColumnIndex
 
+  lazy val cellType: Int = cell.getCellType
+
+  lazy val hasBorderBottom: Boolean = cell.getCellStyle match {
+    case null => false
+    case style => hasBorder(style.getBorderBottom)
+  }
+
+  lazy val hasBorderTop: Boolean = cell.getCellStyle match {
+    case null => false
+    case style => hasBorder(style.getBorderTop)
+  }
+
+  lazy val hasBorderLeft: Boolean = cell.getCellStyle match {
+    case null => false
+    case style => hasBorder(style.getBorderLeft)
+  }
+
+  lazy val hasBorderRight: Boolean = cell.getCellStyle match {
+    case null => false
+    case style => hasBorder(style.getBorderRight)
+  }
+
   def text: String =  {
     if(cell == null){
       ""
@@ -23,6 +45,25 @@ class RichCell(cell: Cell){
         case Cell.CELL_TYPE_STRING  => String.valueOf(cell.getStringCellValue())
         case _                      => ""
       }
+    }
+  }
+
+  private def hasBorder(borderStyle: Short): Boolean = {
+    borderStyle match {
+      case CellStyle.BORDER_NONE                => false
+      case CellStyle.BORDER_THIN                => true
+      case CellStyle.BORDER_MEDIUM              => true
+      case CellStyle.BORDER_DASHED              => true
+      case CellStyle.BORDER_DOTTED              => true
+      case CellStyle.BORDER_THICK               => true
+      case CellStyle.BORDER_DOUBLE              => true
+      case CellStyle.BORDER_HAIR                => true
+      case CellStyle.BORDER_MEDIUM_DASHED       => true
+      case CellStyle.BORDER_DASH_DOT            => true
+      case CellStyle.BORDER_MEDIUM_DASH_DOT     => true
+      case CellStyle.BORDER_MEDIUM_DASH_DOT_DOT => true
+      case CellStyle.BORDER_SLANTED_DASH_DOT    => true
+      case _                                    => false
     }
   }
 

@@ -5,6 +5,8 @@ import scala.collection.mutable.ListBuffer
 
 class RichSheet(sheet: Sheet){
 
+  lazy val name = sheet.getSheetName
+
   def row(rowNum: Int): Seq[RichCell] = {
     val row = sheet.getRow(rowNum)
     if(row == null){
