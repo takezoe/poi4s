@@ -1,7 +1,18 @@
 poi4s
-=====
-
+========
 Elegant interface to access to Excel for Scala
+
+Setup
+--------
+
+```scala
+resolvers += "amateras-repo" at "http://amateras.sourceforge.jp/mvn/"
+
+libraryDependencies += "jp.sf.amateras" %% "poi4s" % "0.0.1"
+```
+
+Example
+--------
 
 ```scala
 import jp.sf.amateras.poi4s._
@@ -17,3 +28,9 @@ workbook.sheet(0).foreach { sheet =>
   }
 }
 ```
+
+Release Notes
+--------
+### 0.0.1 - 04 Mar 2014
+
+* Initial public release
