@@ -4,30 +4,30 @@ import org.apache.poi.ss.usermodel._
 
 class RichCell(cell: Cell){
 
-  lazy val row: Row = cell.getRow
+  def row: Row = cell.getRow
 
-  lazy val rowNum: Int = cell.getRowIndex
+  def rowNum: Int = cell.getRowIndex
 
-  lazy val colNum: Int = cell.getColumnIndex
+  def colNum: Int = cell.getColumnIndex
 
-  lazy val cellType: Int = cell.getCellType
+  def cellType: Int = cell.getCellType
 
-  lazy val hasBorderBottom: Boolean = cell.getCellStyle match {
+  def hasBorderBottom: Boolean = cell.getCellStyle match {
     case null => false
     case style => hasBorder(style.getBorderBottom)
   }
 
-  lazy val hasBorderTop: Boolean = cell.getCellStyle match {
+  def hasBorderTop: Boolean = cell.getCellStyle match {
     case null => false
     case style => hasBorder(style.getBorderTop)
   }
 
-  lazy val hasBorderLeft: Boolean = cell.getCellStyle match {
+  def hasBorderLeft: Boolean = cell.getCellStyle match {
     case null => false
     case style => hasBorder(style.getBorderLeft)
   }
 
-  lazy val hasBorderRight: Boolean = cell.getCellStyle match {
+  def hasBorderRight: Boolean = cell.getCellStyle match {
     case null => false
     case style => hasBorder(style.getBorderRight)
   }
