@@ -18,6 +18,8 @@ libraryDependencies ++= Seq(
 
 parallelExecution in Test := false
 
+scalacOptions := Seq("-feature")
+
 publishTo <<= (version) { version: String =>
   val repoInfo =
     if (version.trim.endsWith("SNAPSHOT"))

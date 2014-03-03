@@ -1,6 +1,7 @@
 package jp.sf.amateras
 
 import org.apache.poi.ss.usermodel._
+import scala.language.implicitConversions
 
 package object poi4s {
 
