@@ -8,4 +8,7 @@ class RichWorkbook(workbook: Workbook) {
 
   def sheet(name: String): Option[Sheet] = Option(workbook.getSheet(name))
 
+  def sheet(index: Int): Option[Sheet] =
+    if(index >= 0 && index < workbook.getNumberOfSheets) Some(workbook.getSheetAt(index)) else None
+
 }
