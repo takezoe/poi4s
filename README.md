@@ -1,6 +1,6 @@
 poi4s
 ========
-Elegant interface to access to Excel for Scala
+Elegant interface to Excel for Scala
 
 Setup
 --------
