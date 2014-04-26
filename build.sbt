@@ -4,7 +4,7 @@ organization := "jp.sf.amateras"
 
 version := "0.0.1"
 
-scalaVersion := "2.10.3"
+scalaVersion := "2.10.4"
 
 resolvers += "amateras-release-repo" at "http://amateras.sourceforge.jp/mvn/"
 
@@ -13,7 +13,7 @@ resolvers += "amateras-snapshot-repo" at "http://amateras.sourceforge.jp/mvn-sna
 resolvers += "Local Maven Repository" at "file:///"+Path.userHome.absolutePath+"/.m2/repository"
 
 libraryDependencies ++= Seq(
-  "org.apache.poi" % "poi" % "3.9"
+  "org.apache.poi" % "poi" % "3.10-FINAL"
 )
 
 parallelExecution in Test := false
